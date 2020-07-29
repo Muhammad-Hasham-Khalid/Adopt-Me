@@ -1,5 +1,5 @@
 /* 
-React.createELement(
+React.createElement(
   what kind of tag it is,
   attributes we want to give to component,
   children

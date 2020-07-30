@@ -1,35 +1,40 @@
 {
-  "name": "adopt-me",
+  "name": "complete-intro-to-react-v5",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "parcel src/index.html",
-    "format": "prettier \"src/**/*.{js, html}\" --write",
-    "lint": "eslint \"src/**/*.{js, jsx}\" --quiet",
-    "dev:mock": "cross-env PET_MOCK=mock npm run dev"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "cross-env": "^7.0.2",
-    "eslint": "^7.5.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.5",
-    "eslint-plugin-react-hooks": "^4.0.8",
-    "parcel-bundler": "^1.12.4",
-    "prettier": "^2.0.5"
-  },
+  "description": "the Complete Intro to React, v5",
+  "main": "src/App.js",
   "dependencies": {
     "@frontendmasters/pet": "^1.0.3",
-    "@reach/router": "^1.3.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "@reach/router": "^1.2.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.12.1",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-jsx-a11y": "^6.2.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.0.2",
+    "parcel-bundler": "^1.12.1",
+    "prettier": "^1.16.1"
+  },
+  "scripts": {
+    "clear-build-cache": "rm -rf .cache/ dist/",
+    "dev": "parcel src/index.html",
+    "dev:mock": "cross-env PET_MOCK=mock parcel src/index.html",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Holt <btholt+complete-intro-to-react@gmail.com>",
+  "license": "Apache-2.0",
   "browserslist": [
     "last 2 Chrome versions"
   ]

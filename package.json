@@ -4,6 +4,8 @@
   "description": "the Complete Intro to React, v5",
   "main": "src/App.js",
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.27",
+    "@emotion/core": "^10.0.28",
     "@frontendmasters/pet": "^1.0.3",
     "@reach/router": "^1.2.1",
     "react": "^16.8.4",

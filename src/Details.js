@@ -1,10 +1,16 @@
-import React from "react";
+import React, { lazy } from "react";
 import pet from "@frontendmasters/pet";
 import { navigate } from "@reach/router";
-import Modal from "./Modal";
+// import Modal from "./Modal";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import ThemeContext from "./ThemeContext";
+import _ from "lodash";
+import moment from "moment";
+
+const Modal = lazy(() => import("./Modal"));
+
+console.log(_, moment);
 
 class Details extends React.Component {
   // new featured syntax available throught babel

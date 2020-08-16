@@ -4,7 +4,10 @@ import React, { Component } from "react";
 import { Link, Redirect } from "@reach/router";
 
 class ErrorBoundary extends Component {
-  state = { hasError: false, redirect: false };
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, redirect: false };
+  }
 
   static getDerivedStatefromError() {
     // gets called whenever there is an error inside of it (children)

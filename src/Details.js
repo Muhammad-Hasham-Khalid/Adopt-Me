@@ -8,7 +8,12 @@ import ThemeContext from "./ThemeContext";
 
 class Details extends React.Component {
   // new featured syntax available throught babel
-  state = { loading: true, showModal: false };
+  constructor(props) {
+    super(props);
+    this.state = { loading: true, showModal: false };
+    this.toggleModal = this.toggleModal.bind(this);
+    this.adopt = this.adopt.bind(this);
+  }
 
   componentDidMount() {
     // similar to useEffect but it runs only once
@@ -27,9 +32,13 @@ class Details extends React.Component {
     }, console.error);
   }
 
-  toggleModal = () => this.setState({ showModal: !this.state.showModal });
+  toggleModal() {
+    this.setState({ showModal: !this.state.showModal });
+  }
 
-  adopt = () => navigate(this.state.url);
+  adopt() {
+    navigate(this.state.url);
+  }
 
   render() {
     if (this.state.loading) {

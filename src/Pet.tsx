@@ -1,7 +1,17 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
+import { Photo } from "@frontendmasters/pet";
 import { Link } from "@reach/router";
 
-export default function Pet({ name, animal, breed, media, location, id }) {
+const Pet: FunctionComponent<{
+  name: string;
+  animal: string;
+  breed: string;
+  media: Photo[];
+  location: string;
+  id: number;
+}> = props => {
+  const { name, animal, breed, media, location, id } = props;
+
   let hero = "http://placeorgi.com/300/300";
   if (media.length) {
     hero = media[0].small;
@@ -18,4 +28,6 @@ export default function Pet({ name, animal, breed, media, location, id }) {
       </div>
     </Link>
   );
-}
+};
+
+export default Pet;

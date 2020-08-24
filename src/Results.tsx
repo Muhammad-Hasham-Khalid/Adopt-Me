@@ -1,13 +1,18 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import Pet from "./Pet";
+import { Animal } from "@frontendmasters/pet";
 
-export default function Results({ pets }) {
+interface IProps {
+  pets: Animal[];
+}
+
+const Results: FunctionComponent<IProps> = ({ pets }) => {
   return (
     <div className="search">
       {pets.length === 0 ? (
         <h1>No Pets Found</h1>
       ) : (
-        pets.map((pet) => (
+        pets.map(pet => (
           <Pet
             animal={pet.type}
             key={pet.id}
@@ -21,4 +26,6 @@ export default function Results({ pets }) {
       )}
     </div>
   );
-}
+};
+
+export default Results;

@@ -1,23 +1,23 @@
 //mostly code from reactjs.org/docs/error-boundaries.html
 
-import React, { Component } from "react";
+import React, { Component, ErrorInfo } from "react";
 import { Link, Redirect } from "@reach/router";
 
 class ErrorBoundary extends Component {
-  state = { hasError: false, redirect: false };
+  public state = { hasError: false, redirect: false };
 
-  static getDerivedStatefromError() {
+  public static getDerivedStatefromError() {
     // gets called whenever there is an error inside of it (children)
     // function built in with React
 
     return { hasError: true };
   }
 
-  componentDidCatch(error, info) {
+  public componentDidCatch(error: Error, info: ErrorInfo) {
     console.error("ErrorBoundary caught an error", error, info);
   }
 
-  componentDidUpdate() {
+  public componentDidUpdate() {
     // After component updates
     // not called for initial render
     // is called when props change or state change (very much similar to useEffect)
@@ -27,7 +27,7 @@ class ErrorBoundary extends Component {
     }
   }
 
-  render() {
+  public render() {
     if (this.state.redirect) {
       return <Redirect to="/" />;
     }

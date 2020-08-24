@@ -1,18 +1,32 @@
 import React from "react";
-import pet from "@frontendmasters/pet";
-import { navigate } from "@reach/router";
+import pet, { Photo } from "@frontendmasters/pet";
+import { navigate, RouteComponentProps } from "@reach/router";
 import Modal from "./Modal";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import ThemeContext from "./ThemeContext";
 
-class Details extends React.Component {
+class Details extends React.Component<RouteComponentProps<{ id: string }>> {
   // new featured syntax available throught babel
-  state = { loading: true, showModal: false };
+  public state = {
+    name: "",
+    loading: true,
+    showModal: false,
+    animal: "",
+    location: "",
+    description: "",
+    media: [] as Photo[],
+    url: "",
+    breed: ""
+  };
 
-  componentDidMount() {
+  public componentDidMount() {
     // similar to useEffect but it runs only once
     // props are read-only (coming from parent)
+    if (!this.props.id) {
+      navigate("/");
+      return;
+    }
     pet.animal(+this.props.id).then(({ animal }) => {
       this.setState({
         url: animal.url,
@@ -27,11 +41,12 @@ class Details extends React.Component {
     }, console.error);
   }
 
-  toggleModal = () => this.setState({ showModal: !this.state.showModal });
+  public toggleModal = () =>
+    this.setState({ showModal: !this.state.showModal });
 
-  adopt = () => navigate(this.state.url);
+  public adopt = () => navigate(this.state.url);
 
-  render() {
+  public render() {
     if (this.state.loading) {
       return <h1>Loading ...</h1>;
     }
@@ -81,7 +96,9 @@ class Details extends React.Component {
   }
 }
 
-export default function DetailsWthErrorBoundary(props) {
+export default function DetailsWthErrorBoundary(
+  props: RouteComponentProps<{ id: string }>
+) {
   return (
     <ErrorBoundary>
       <Details {...props} />

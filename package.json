@@ -6,6 +6,7 @@
   "dependencies": {
     "@frontendmasters/pet": "^1.0.3",
     "@reach/router": "^1.2.1",
+    "@testing-library/react": "^10.4.9",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
@@ -22,6 +23,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.0.2",
+    "jest": "^26.4.2",
     "parcel-bundler": "^1.12.1",
     "prettier": "^1.16.1"
   },
@@ -31,7 +33,10 @@
     "dev:mock": "cross-env PET_MOCK=mock parcel src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:update": "jest -u",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "license": "Apache-2.0",
   "browserslist": [

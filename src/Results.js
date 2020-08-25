@@ -3,11 +3,11 @@ import Pet from "./Pet";
 
 export default function Results({ pets }) {
   return (
-    <div className="search">
+    <div data-testid="search-results" className="search">
       {pets.length === 0 ? (
         <h1>No Pets Found</h1>
       ) : (
-        pets.map((pet) => (
+        pets.map(pet => (
           <Pet
             animal={pet.type}
             key={pet.id}

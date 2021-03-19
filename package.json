@@ -31,7 +31,8 @@
     "dev:mock": "cross-env PET_MOCK=mock parcel src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/index.html"
   },
   "license": "Apache-2.0",
   "browserslist": [
